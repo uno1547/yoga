@@ -1,0 +1,396 @@
+
+html {
+  /* scrollbar-width: none; */
+}
+h2 {
+  margin: 0;
+  padding: 20px;
+}
+body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.inner {
+  width: 1700px;
+  margin: auto;
+}
+
+
+/*header*/
+header {
+  background-color: white;
+  z-index: 3;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding-top:10px;
+}
+
+header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo a {
+  padding: 30px 20px;
+}
+
+header nav {
+  display: flex;
+  /* align-items: center; */
+}
+
+header nav ul {
+  display: flex;
+  /* align-items: center; */
+  list-style: none;
+}
+header nav ul li {
+  margin: 0 25px;
+}
+header nav ul li a {
+  padding: 30px 10px;
+}
+
+header nav ul li a,
+header nav ul li span {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+header ul li:hover > a,
+header ul li:hover span {
+  color: rgb(167, 167, 167);
+}
+
+
+/* main */
+main {
+  margin-top: 110px;
+
+}
+main .inner {
+  position: relative;
+}
+main ul {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  /* margin-bottom: 10px; */
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 109px;
+  border-bottom: 5px groove #b2b2b2;
+
+  /*sticky쓰거나 위의 fixed쓰나 다를바가없는데 ul만큼 부피 차지하는것말고는*/
+  position: sticky;
+  top: 109px;
+}
+
+main ul li {
+  list-style-type: none;
+}
+
+main ul li span {
+  display: inline-block;
+  /* border-radius: 10px; */
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+main ul li:hover span {
+  color: #979797;
+}
+
+main ul li span.current {
+  background-color: #b6b6b6;
+}
+
+/*main #date-input (스타일 필요하면 바꾸자)*/
+main div#date-input {
+  /* width: 1110px; */
+  width: 100%;
+  margin: 10px auto 5px;
+  padding: 0px 5px;
+}
+main div#date-input input {
+  height: 30px;
+  width: 150px;
+}
+/* 월별방문의 조절버튼 */
+main div#date-input span.control {
+  background-color:rgb(239, 239, 239);
+  border-radius: 3px;
+  padding: 8px 13px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+main div#date-input span.control:hover {
+  background-color: #979797;
+}
+/* 방문의 검색버튼 */
+main div#date-input input#search {
+  cursor: pointer;
+  width: 50px;
+}
+
+/* main table#list-table */
+
+main table#list-table {
+  margin: auto;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+  text-align: center;
+  table-layout: fixed;
+}
+
+table#list-table tr#table-key {
+  background-color: #b2b2b2;
+  font-weight: bold;
+}
+
+table#list-table tr.table-val {
+  background-color: rgb(223, 223, 223);
+  font-weight: 500;
+}
+
+table#list-table th,
+table#list-table td {
+  padding: 15px 40px;
+}
+
+/* 일일방문현황 table키 */
+table#list-table.day-list tr#table-key th:nth-child(1) {
+  /* width: 20px; */
+}
+table#list-table.day-list tr#table-key th:nth-child(2) {
+  width: 200px;
+}
+table#list-table.day-list tr#table-key th:nth-child(3) {
+  /* width: 20px; */
+}
+table#list-table.day-list tr#table-key th:nth-child(4) {
+  /* width: 20px; */
+}
+table#list-table.day-list tr#table-key th:nth-child(5) {
+  /* width: 35px; */
+}
+table#list-table.day-list tr#table-key th:nth-child(6) {
+  /* width: 20px; */
+}
+table#list-table.day-list tr#table-key th:nth-child(7) {
+  width: 150px;
+}
+table#list-table.day-list tr#table-key th:nth-child(8) {
+  width: 150px;
+}
+/* 일일방문현황 table값 */
+
+table#list-table.day-list tr.table-val {
+  height: 60px;
+}
+
+table#list-table.day-list tr.table-val td {
+  padding: 10px 40px;
+}
+
+table#list-table.day-list tr.table-val td:nth-child(7) span,
+table#list-table.day-list tr.table-val td:nth-child(8) span{
+  display: block; /*텍스트 줄바꿈을 위해서*/
+}
+
+/* 일일방문현황 table값 skeleton */
+table#list-table.day-list tr.table-val.skeleton-line td {
+  /* height: 38.89px; span의 높이를 40을줄순없음 높이채우기위해40 */
+}
+table#list-table.day-list tr.table-val.skeleton-line td span {
+  display: inline-block; /*텍스트 줄바꿈을 위해서*/
+  border-radius: 3px;
+  height: 10px;
+  background-color: #b2b2b2;
+}
+table#list-table.day-list .skeleton-line td:nth-child(1) span {
+  width: 60px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(2) span {
+  width: 190px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(3) span {
+  width: 60px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(4) span {
+  width: 60px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(5) span {
+  width: 120px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(6) span {
+  width: 60px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(7) span { /*시작시간*/
+  width: 100px;
+}
+table#list-table.day-list .skeleton-line td:nth-child(8) span { /*시작시간*/
+  width: 100px;
+}
+
+
+
+
+
+
+
+
+
+/* 월별방문현황 table*/
+table#list-table.month-list tr .day-cell {
+  /* border: 1px solid #b6b6b6; */
+  background-color: #e4e4e4;
+  border-right: 1px solid #b6b6b6;
+  width: 13px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* 월별방문현황 table 키*/
+table#list-table.month-list tr#table-key th:nth-child(1) {
+  width: 60px;
+}
+table#list-table.month-list tr#table-key th:nth-child(2) {
+  width: 60px;
+}
+table#list-table.month-list tr#table-key th:nth-child(3) {
+  width: 120px;
+}
+table#list-table.month-list tr#table-key th:last-child {
+  width: 60px;
+}
+
+/* 월별방문현황 table 값*/
+
+
+
+/* 월별방문현황 table값 skeleton */
+table#list-table.month-list tr.table-val {
+  height: 49.33px;
+}
+table#list-table.month-list tr.table-val td {
+  /* width: 60px; */
+  /* height: 40px; */
+  /* vertical-align: middle; */
+}
+table#list-table.month-list tr.table-val td span {
+  /* width: 60px; */
+  /* height: 0px; */
+  display: inline-block;
+  border-radius: 3px;
+  /* height: 5px; */
+  height: 10px;
+  background-color: #b2b2b2;
+
+  /* display: inline-block; 
+  border-radius: 3px;
+  height: 10px;
+  background-color: #b2b2b2; */
+}
+table#list-table.month-list tr.table-val.skeleton-line td:nth-child(1) span {
+  width: 60px;
+}
+table#list-table.month-list tr.table-val.skeleton-line td:nth-child(2) span {
+  width: 60px;
+}
+table#list-table.month-list tr.table-val.skeleton-line td:nth-child(3) span {
+  width: 60px;
+}
+table#list-table.month-list tr.table-val.skeleton-line td.day-cell span {
+  width: 10px;
+}
+table#list-table.month-list tr.table-val.skeleton-line td:last-child span {
+  width: 30px;
+}
+/*main #table-list COMMON (table 리스트 common)*/
+/*
+main div#table-list table#list-key,
+main div#table-list table#list-val {
+  table-layout: fixed;
+  width: 1700px;
+}
+table#list-val tr.skeleton-line td span {
+  background-color: #afafaf;
+  border-radius: 5px;
+  display: inline-block;
+  height: 10px;
+}
+*/
+
+
+
+/* pagination */
+
+div.inner #pagination {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  /* width: 150px;
+  margin: auto; */
+}
+div.inner #pagination span{
+  font-weight: bold;
+}
+#pagination button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+#pagination button:hover {
+  background-color: rgb(146, 146, 146);
+  color: #fff;
+  /* border-radius: 20px; */
+}
+
+#pagination #page-indicator {
+  display: flex;
+  align-items: center;
+}
+
+#pagination #page-indicator .page-btn {
+  /* width: 10px; */
+  width: 19px;
+  /* height: 30px; */
+  margin: 0px 3px;
+  padding: 5px 5px;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  cursor: pointer;
+
+}
+#pagination #page-indicator .page-btn span.page-num {
+  /* line-height: 10px; */
+}
+#pagination #page-indicator .page-btn.current {
+  background-color: rgb(31, 31, 31);
+  color: #fff;
+}
+
+#pagination #page-indicator .page-btn:hover {
+  background-color: rgb(146, 146, 146);
+  color: #fff;
+}

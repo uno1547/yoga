@@ -1,0 +1,60 @@
+/* inner */
+.inner {
+  /* width: 1120px; */
+  width: 1320px;
+  /* border: 1px solid black; */
+  margin: 50px auto;
+}
+/* .inner #class-info */
+.inner #class-info {
+
+}
+#class-info .text {
+  font-size: 40px;
+  padding: 20px;
+}
+#class-info .text #date {
+  padding: 10px 0px;
+}
+#class-info .text #clock {
+  font-size: 20px;
+}
+#class-info .text #visit-num {
+  padding: 10px 0px;
+  font-size: 30px;
+}
+/* .inner #attend-pallette */
+.inner #attend-pallette {
+  width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(5, 240px);
+  grid-auto-rows: 250px;
+  gap: 20px;
+  padding: 20px;
+}
+#attend-pallette .attend {
+  /* width: 200px;
+  height: 250px; */
+  background-color: #e3e3e3;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#attend-pallette .attend .row {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+#attend-pallette .attend .row .text {
+  padding: 15px 10px;
+  font-weight: 500;
+  color: #535353;
+}
+#attend-pallette .attend .row .content {
+  width: 82px;
+  padding: 0px 20px;
+  text-align: center;
+  font-weight: bolder;
+}

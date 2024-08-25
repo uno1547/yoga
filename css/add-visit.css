@@ -1,0 +1,16 @@
+.inner {
+  width: 1500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.inner input {
+  border-radius: 10px;
+  font-size: 40px;
+  padding: 20px 50px;
+}
+.inner input::-webkit-outer-spin-button,
+.inner input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

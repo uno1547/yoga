@@ -1,0 +1,152 @@
+.inner {
+  width: 820px;
+  border: 1px solid black;
+  margin: 30px auto;
+}
+/* form common*/
+form .head-text-wrap {
+  padding: 15px;
+}
+form .head-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+form .wrap {
+  display: flex;
+  align-items:center;
+  padding: 8px 15px;
+}
+form .text {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0px 0px;
+  /* display: flex;
+  align-items: center; */
+}
+form input[type="radio"] {
+  margin-top: 0px;
+}
+form .radio-input {
+  margin: 0px 15px;
+}
+form .radio-input label {
+  margin: 10px;
+  font-size: 20px;
+}
+/* .class.wrap */
+.class.wrap {
+  height: 116px;
+  position: relative; 
+}
+.class.wrap table#drop-down {
+  /* border-collapse: collapse; */
+  margin: 0px 25px;
+  display: block; /*table의 display 가 table이라 강제로 바꿈*/
+  height: 116px;
+  height: 113px; /*얘됨1*/
+  height: 115px; /*얘됨2*/
+  overflow-y: scroll;  /*유력한 문제의 원인*/
+  scrollbar-width: none;
+  /* position: absolute; */
+}
+.class.wrap table#drop-down:hover {
+  /* box-shadow :rgba(0, 0, 0, 0.56) 0px -12px 23px -7px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px -7px 19px -8px; */
+  border-radius: 5px;
+  height: 230px;
+  height: 225px; /*얘됨1*/
+  height: 226px; /*얘됨2*/
+  height: 228px; /*얘됨2*/
+  overflow-y: scroll;
+  position: absolute;
+  transition: .5s;
+  top: 8px;
+  left: 77px;
+  /* z-index: 1; */
+}
+
+table#drop-down tr {
+  width: 640px;
+  /* padding: 0px 10px 15px 10px; */
+  /* margin: 0px 10px 15px 10px; */
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #d9d9d9;
+  display: flex;
+}
+table#drop-down tr td {
+  text-align: center;
+  font-size: 19px;
+  /* display: flex;
+  align-items: center; */
+}
+table#drop-down tr td:nth-child(1) {
+  /* radio임 */
+}
+table#drop-down tr td:nth-child(2) {
+  /* 개인레슨, 그룹레슨, 요가주3회 */
+  width: 150px;
+}
+table#drop-down tr td:nth-child(3) {
+  /* 총 10회 */
+  width: 100px;
+}
+table#drop-down tr td:nth-child(4) {
+  /* 3개워 */
+  width: 100px;
+}
+table#drop-down tr td:nth-child(5) {
+  /* 현금가 */
+  width: 150px;
+}
+table#drop-down tr td:nth-child(6) {
+  /* 카드가 */
+  width: 150px;
+}
+/* .payment-method.wrap .radio-input {
+
+}
+.payment-method.wrap .radio-input label {
+
+}
+.payment-teacher.wrap .radio-input {
+
+
+}
+.payment-teacher.wrap .radio-input label {
+
+} */
+/* payment-content */
+#payment-info {
+  height: 340px;
+  position: relative;
+}
+#payment-info #payment-content {
+
+}
+#payment-info #payment-content .wrap {
+  justify-content: center;
+}
+#payment-info #payment-content .text {
+  /* display: flex;
+  align-items: center; */
+}
+#payment-info #payment-content .val {
+  margin: 0px 20px;
+  width: 280px;
+  text-align: center;
+}
+#payment-info #payment-content .val span {
+  font-size: 20px;
+}
+/* submit button */
+form button {
+  font-size: 18px;
+  width: 140px;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  /* text-align: right; */
+}

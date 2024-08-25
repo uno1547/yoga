@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원관리바로가기</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/member-manage.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <h1><a href="/src">UNO YOGA</a></h1>
+    </div>
+    <ul>
+      <li><span class="material-symbols-outlined">
+        group
+      </span><a href="member-manage.html">회원관리바로가기</a></li>
+      <li><span class="material-symbols-outlined">
+        search
+      </span><a href="search.html">회원통합검색</a></li>
+      <li class="dropdown">
+        <span class="material-symbols-outlined">analytics</span>
+        <a>통계</a>
+        <div class="dropdown-content">
+          <a href="/src/stat/pay-stat.html">결제통계</a>
+          <a href="/src/stat/visit-stat.html">방문통계</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div class = "inner">
+    <div id = "member-info">
+      <div class="row">
+        <div id = "personal-data">
+          <div class = "update">
+            <button id="sign-up">신규회원등록</button>
+            <button id="new-pay">회원통합결제</button>
+            <button id="attendance-update">실시간방문현황</button>
+            <button id="show-expire">만기회원현황</button>
+          </div>
+          <div class = "buttons">
+            <button id="prevMember"><</button>
+            <button id="nextMember">></button>
+            <button id="update-info">정보 수정</button>
+          </div>
+          <div id = "photo">사진과버튼</div>
+          <table class="info">
+            <tr>
+              <th>이름 / 성별</th>
+              <td class="name gender">
+                <span class="name-span"></span>
+                <span class="gender-span"></span>
+              </td>
+            </tr>
+            <tr>
+              <th>회원번호</th>
+              <td class="user_id"></td>
+            </tr>
+            <tr>
+              <th>연락처</th>
+              <td class="phone_number"></td>
+            </tr>
+            <tr>
+              <th>생년월일</th>
+              <td class="birth_date"></td>
+            </tr>
+            <tr>
+              <th>가입일</th>
+              <td class="sign_in_date"></td>
+            </tr>
+            <tr>
+              <th>회원그룹</th>
+              <td class="group"></td>
+            </tr>
+            <tr>
+              <th>담당강사</th>
+              <td class="teacher"></td>
+            </tr>
+            <tr>
+              <th>수강정보</th>
+              <td class="class"></td>
+            </tr>
+          </table>
+        </div>
+        <div id = "attend-calender">
+        </div>
+      </div>
+      <div id = "payment-list">
+        결제내역
+        <table class="key">
+          <tr>
+            <th>번호</th>
+            <th>결제일</th>
+            <th>수강종목</th>
+            <th>수강기간</th>
+            <th>상태</th>
+            <th>결제금액</th>
+          </tr>
+        </table>
+        <table class="val">
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  <script type= "module" src = "/js/member-manage.js"></script>
+</body>
+</html>

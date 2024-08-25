@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결제통계</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/stat/stat.css">
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <div class="logo">
+          <h1><a href="/src/">UNO YOGA</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <span class="material-symbols-outlined">
+              group
+            </span>
+            <a href="/src/member-manage.html">회원관리바로가기</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">
+              search
+            </span>
+            <a href="/src/search.html">회원통합검색</a>
+          </li>
+          <li class="dropdown">
+            <span class="material-symbols-outlined">analytics</span>
+            <a>통계</a>
+            <div class="dropdown-content">
+              <a href="/src/stat/pay-stat.html">결제통계</a>
+              <a href="/src/stat/visit-stat.html">방문통계</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <hr>
+  </header>
+  <main>
+    <div class="inner">
+      <h2>결제통계</h2>
+      <ul id="term-select">
+        <li>
+          <span class="current">전체결제</span>
+        </li>
+        <li>
+          <span>월별결제</span>
+        </li>
+        <li>
+          <span>일별결제</span>
+        </li>
+      </ul>
+      <!-- 요약 테이블 키 -->
+      <table id = "short-view-key">
+        <tr>
+          <th>총 결제건수</th>
+          <th>총 카드결제</th>
+          <th>총 현금결제</th>
+          <th>총 환불금액</th>
+          <th>최종 결제(매출)금액</th>
+        </tr>
+      </table>
+      <!-- 요약 테이블 값 -->
+      <table id = "short-view-val">
+        <tr class = "skeleton-line">
+          <td><span></span></td>
+          <td><span></span></td>
+          <td><span></span></td>
+          <td><span></span></td>
+          <td><span></span></td>
+        </tr>
+      </table>
+      <!-- 위까진 id, class로 구분할필요없음 -->
+      <!-- 날짜변경 input -->
+      <div id = "date-input">
+        검색기간
+        <input type="date" id="start-date"> ~
+        <input type="date" id="end-date">
+        <input type="button" id='search' value="검색">
+      </div>
+      <!-- 리스트 table키 값 -->
+      <div id = "table-list">
+        <!-- 리스트 table값 -->
+        <table id="list-key" class="all-list">
+          <tr>
+            <th>결제일</th>
+            <th>회원이름</th>
+            <th>담당강사</th>
+            <th>결제강사</th>
+            <th>휴대폰번호</th>
+            <th>결제항목</th>
+            <th>시작일</th>
+            <th>만료일</th>
+            <th>결제금액</th>
+          </tr>
+        </table>
+        <!-- div#table-list table#list-val -->
+        <table id="list-val" class="all-list">
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+          <tr class = "skeleton-line">
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+          </tr>
+        </table>
+      </div>
+      <div id="pagination">
+      </div>
+      <!-- <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper leo eget purus tincidunt vulputate. Vivamus ut ex vel odio cursus pharetra eu non est. Sed efficitur facilisis magna, id fermentum tortor finibus quis. In fringilla, nisi eget posuere vehicula, ipsum magna porttitor elit, nec pretium ex lacus at ante. In dictum id quam non finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit risus in aliquet mattis. Nulla quis est sit amet dui hendrerit tempor. Aliquam pharetra blandit nisl, id luctus nibh dictum sed. Maecenas vulputate urna sed justo fringilla feugiat. Pellentesque nulla lacus, ultricies at luctus vel, varius ut enim. Vestibulum dignissim ligula nec nisi finibus, sit amet interdum orci mattis.
+
+Cras fermentum lectus nisi, ut dapibus libero sollicitudin vitae. Fusce diam diam, viverra eget molestie non, auctor eu nulla. Nullam tristique magna ac libero luctus consequat. Phasellus ante turpis, sodales et tortor sit amet, egestas dignissim tellus. Aenean ac malesuada orci. Aliquam venenatis, diam at lacinia fringilla, nunc eros gravida libero, eget tincidunt sapien tellus quis justo. Proin purus ligula, sodales at nisi vel, suscipit fringilla mi. Sed sit amet commodo nisi.
+
+Nullam id turpis nisl. Suspendisse faucibus magna nulla. Donec sollicitudin non felis quis placerat. Praesent rhoncus eu nisi et pretium. Nam finibus convallis tempus. Nullam lobortis ultrices tortor. Sed sed lacus eget dolor pulvinar convallis sit amet eget erat. Duis vehicula ut nulla ac consequat. Sed at mauris magna. Nam efficitur dui quis lectus sodales sagittis.
+
+Pellentesque euismod, ex eu accumsan vestibulum, libero tortor finibus urna, quis mollis odio nisi eget leo. In facilisis congue tellus et condimentum. Donec elementum consectetur sapien ut maximus. Nulla accumsan quam vel pharetra finibus. Phasellus sodales volutpat augue, vel vehicula arcu aliquet ut. Nullam auctor sed leo et scelerisque. Integer ultrices hendrerit sapien sed euismod. Sed consequat posuere metus eget rhoncus.
+
+Fusce varius tellus leo, nec porta dui sollicitudin at. Nam quis dolor tempor, iaculis velit non, dictum nisi. Nam accumsan felis at odio eleifend ornare. Vivamus vitae ligula ut nulla finibus sagittis. Nulla erat sapien, bibendum vitae risus a, tincidunt sollicitudin leo. Ut eget metus scelerisque, pulvinar lacus ac, convallis neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ut placerat mauris, a viverra magna. Duis tincidunt velit vel elit ornare facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+
+Morbi accumsan ante ac metus porttitor, consectetur ultrices enim dignissim. Vivamus lorem lorem, egestas id neque quis, blandit facilisis odio. Nullam turpis justo, egestas quis purus in, egestas interdum odio. Nullam dignissim risus ut vulputate laoreet. Phasellus sed bibendum metus, in accumsan nunc. Aliquam sit amet leo sed mauris hendrerit suscipit. Vivamus mauris nulla, elementum ac aliquet ac, posuere id massa. Donec velit diam, mollis quis nunc quis, tempus finibus metus. Maecenas fermentum nibh quis placerat egestas. Suspendisse malesuada ullamcorper arcu, et scelerisque neque placerat eget.
+
+Quisque sit amet lacinia erat, gravida scelerisque turpis. Nulla ut interdum dui, vel laoreet ante. Morbi fermentum eu lectus eu porttitor. Maecenas ac nisi sed quam condimentum pretium blandit facilisis metus. Aliquam commodo finibus est, vehicula ornare felis pretium a. Donec non magna posuere, pharetra nulla quis, mattis turpis. Ut nulla mauris, efficitur ac consequat ut, faucibus et libero. Etiam commodo, arcu eget gravida malesuada, velit erat congue odio, sit amet bibendum tellus magna eget sem. Fusce sit amet massa ut lacus fermentum commodo.
+
+Sed sit amet accumsan augue, a pretium ligula. Proin dolor elit, feugiat et mollis sed, rhoncus sed ligula. In egestas laoreet risus, quis tincidunt velit pharetra vitae. Vivamus molestie molestie ullamcorper. Aliquam sagittis scelerisque nibh. Nunc volutpat dolor a magna ullamcorper, nec lacinia erat scelerisque. Mauris ante diam, euismod non congue eu, hendrerit at nibh. Vestibulum sed semper quam. In aliquet sem vitae varius accumsan. Etiam ornare aliquam iaculis. Morbi bibendum lacus porta, mattis nibh eget, aliquet metus. In nec enim at ligula malesuada efficitur. Duis egestas felis vitae magna posuere, eget lobortis felis pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+
+Curabitur tortor dolor, egestas nec mi ut, tincidunt viverra mi. Fusce faucibus nibh vitae molestie dignissim. Aliquam pretium molestie elit ut ullamcorper. Proin elementum velit et metus laoreet, nec dapibus lectus congue. Etiam ornare augue vel venenatis facilisis. Proin vel nulla non ante interdum sollicitudin. Morbi egestas quam id rutrum cursus. Curabitur luctus felis a ex porttitor imperdiet. Mauris lacus magna, fermentum ut diam sed, suscipit sollicitudin eros. Fusce venenatis in diam vel tempor. Donec sit amet lectus semper, ultrices orci eu, semper elit. Vestibulum facilisis tempor dolor, id imperdiet ante luctus sed. Phasellus dapibus mauris et felis dignissim dapibus.
+
+Integer eu rhoncus ante. Praesent fringilla dapibus massa imperdiet posuere. Donec elit felis, laoreet et metus ac, faucibus dignissim tellus. Vivamus ut lorem mollis, convallis dui eu, vulputate diam. Donec id commodo mauris. Quisque congue commodo tincidunt. Curabitur feugiat tellus eu vestibulum convallis. Praesent efficitur purus ante. Nam ut semper risus. Proin et ligula pulvinar, porta libero id, efficitur leo. Donec placerat tristique leo. Nullam vitae tristique felis.
+
+Aenean sit amet augue rutrum, pretium elit in, mattis nisl. In eleifend congue pulvinar. Donec facilisis semper purus id eleifend. Nullam gravida sit amet tellus in molestie. Donec ac massa id orci ornare luctus. Phasellus nulla velit, porta porttitor purus sed, pellentesque maximus est. Nullam quam dolor, ornare at fermentum et, consequat vitae velit.
+
+Proin mollis pellentesque eros, eget tempor turpis condimentum ut. Donec finibus, neque ac iaculis imperdiet, nisl lacus finibus urna, vitae luctus lectus sem vel tellus. Mauris elementum hendrerit sapien, posuere maximus massa ultrices quis. Phasellus vestibulum elementum aliquam. Duis imperdiet ut sapien nec sollicitudin. Ut quis risus sit amet ligula dignissim rhoncus. Aenean dapibus orci eget ex tincidunt, in scelerisque ex lacinia. Mauris nec faucibus erat. Phasellus vel fringilla nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque nec sagittis sem, vel posuere libero. Aliquam quis felis eu tortor tincidunt lacinia dignissim sit amet eros. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Vivamus pulvinar nisi odio, eget venenatis felis maximus at. Pellentesque laoreet, nulla non lacinia rutrum, erat sem hendrerit massa, a tincidunt tortor lacus sit amet leo. Aenean et tempor quam. Proin maximus ante at laoreet tincidunt. Etiam lobortis mi erat. Nullam imperdiet leo vel mauris feugiat, vitae hendrerit purus mollis. Sed id ultrices orci. Sed risus lectus, condimentum ac ultricies at, fringilla cursus nulla. Donec interdum gravida ex in dignissim. Nullam interdum nibh vitae fringilla iaculis. Ut quis rhoncus orci, quis feugiat lectus. Fusce sagittis massa nisl, at volutpat nibh feugiat at. Donec a luctus ligula. Vestibulum laoreet ante ac leo congue pulvinar. Phasellus imperdiet dignissim vestibulum.
+
+Phasellus ac imperdiet ipsum. Suspendisse ultrices, magna non sodales lobortis, magna tellus rutrum ante, in aliquet dui tellus non dolor. Aliquam aliquam tortor non ex aliquam, sed aliquam tortor volutpat. Mauris sodales aliquam libero nec aliquam. Nunc ac consectetur sapien. Nulla facilisi. Vestibulum eget posuere diam. Sed porta enim iaculis odio ornare, in condimentum nisl venenatis. Suspendisse potenti. Phasellus ullamcorper eleifend metus quis pellentesque.
+
+Etiam porttitor ante at lorem tincidunt vehicula. Curabitur ornare eleifend diam imperdiet dictum. Duis commodo, turpis at volutpat commodo, nibh tellus auctor enim, at imperdiet mi risus non lectus. Sed sit amet euismod neque, a imperdiet dui. Mauris finibus vel purus et aliquam. Vestibulum sit amet condimentum ipsum. Proin vel faucibus tortor, eu tincidunt libero. Morbi in nisl venenatis, cursus lectus vitae, dapibus nisi. Duis non justo consequat, commodo leo quis, finibus quam. Nunc et erat sem. Pellentesque sit amet finibus purus. Suspendisse ornare est massa, a porta neque eleifend in. Quisque iaculis ante in nibh eleifend commodo. Etiam finibus turpis vitae nibh hendrerit facilisis.
+      </p> -->
+    </div>
+  </main>
+  <!-- <script src="/js/stat/stat-delay.js" type="module"></script> -->
+  <!-- <script src="/js/stat/stat-nodelay.js" type="module"></script> -->
+  <script src="/js/stat/pay-stat.js" type="module"></script>
+</body>
+</html>

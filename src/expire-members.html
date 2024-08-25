@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>만기 회원 현황</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/expire-members.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <h2>만기 / 만기예정 회원목록</h2>
+    </div>
+    <button id="toggle-view-scale">
+      월별보기
+    </button>
+  </div>
+  <hr>
+  <div class="inner">
+    <div id="date-nav">
+      <button id="prev"><</button>
+      <h2>년 월 일</h2>
+      <button id="next">></button>
+    </div>
+    <div id="table-div">
+      <table class="list-key">
+        <tr>
+          <th>번호</th>
+          <th>회원정보</th>
+          <th>수강권</th>
+          <th>수강기간</th>
+        </tr>
+      </table>
+      <table class="list-val">
+        <!-- <tr>
+          <td>1</td>
+          <td>가나다라 (2212) [남]</td>
+          <td>요가 주3회 [1개월] [주 5회권]</td>
+          <td>2024.03.27 ~ 2024.04.27 [만료 7일전]</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>김윤오 (2212) [남]</td>
+          <td>요가 주3회 [1개월] [주 5회권]</td>
+          <td>2024.03.27 ~ 2024.04.27 [만료 6일전]</td>
+        </tr> -->
+      </table>
+    </div>
+    <div id="pagination">
+    </div>
+  </div>
+  <!-- new-expire-window.js 시간 딜레이 명확히 체감된다 -->
+  <!-- <script src="/js/new-expire-window.js" type="module"></script> -->
+  <script src="/js/new-expire-toggle.js" type="module"></script>
+</body>
+</html>
